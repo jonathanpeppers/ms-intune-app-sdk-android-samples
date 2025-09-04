@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0-android</TargetFramework>
+		<TargetFramework>net9.0-android</TargetFramework>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>MauiMAM</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -19,7 +19,7 @@
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">26.0</SupportedOSPlatformVersion>
-
+		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
@@ -47,14 +47,14 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="12.1.0" />
 	</ItemGroup>
 
 	<!--Packages required for Intune MAM-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.57.0" />
-		<PackageReference Include="Microsoft.Intune.Maui.Essentials.android" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Intune.Maui.Essentials.android" Version="11.0.0-develop" />
 	</ItemGroup>
 
 	<ItemGroup>
